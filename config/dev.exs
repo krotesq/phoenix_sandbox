@@ -5,7 +5,7 @@ config :phoenix_sandbox, PhoenixSandbox.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "phoenix_sandbox_dev",
+  database: "postgres_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
