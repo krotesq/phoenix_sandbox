@@ -1,12 +1,12 @@
-defmodule PhoenixSandboxWeb do
+defmodule TestWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use PhoenixSandboxWeb, :controller
-      use PhoenixSandboxWeb, :html
+      use TestWeb, :controller
+      use TestWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,9 +40,9 @@ defmodule PhoenixSandboxWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: PhoenixSandboxWeb.Layouts]
+        layouts: [html: TestWeb.Layouts]
 
-      use Gettext, backend: PhoenixSandboxWeb.Gettext
+      use Gettext, backend: TestWeb.Gettext
 
       import Plug.Conn
 
@@ -53,7 +53,7 @@ defmodule PhoenixSandboxWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PhoenixSandboxWeb.Layouts, :app}
+        layout: {TestWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -83,12 +83,12 @@ defmodule PhoenixSandboxWeb do
   defp html_helpers do
     quote do
       # Translation
-      use Gettext, backend: PhoenixSandboxWeb.Gettext
+      use Gettext, backend: TestWeb.Gettext
 
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components
-      import PhoenixSandboxWeb.CoreComponents
+      import TestWeb.CoreComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -101,9 +101,9 @@ defmodule PhoenixSandboxWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: PhoenixSandboxWeb.Endpoint,
-        router: PhoenixSandboxWeb.Router,
-        statics: PhoenixSandboxWeb.static_paths()
+        endpoint: TestWeb.Endpoint,
+        router: TestWeb.Router,
+        statics: TestWeb.static_paths()
     end
   end
 

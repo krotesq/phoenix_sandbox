@@ -1,6 +1,6 @@
-defmodule PhoenixSandbox do
+defmodule Test do
   @moduledoc """
-  PhoenixSandbox keeps the contexts that define your domain
+  Test keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

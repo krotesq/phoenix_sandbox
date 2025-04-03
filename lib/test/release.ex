@@ -1,9 +1,9 @@
-defmodule PhoenixSandbox.Release do
+defmodule Test.Release do
   @moduledoc """
   Used for executing DB release tasks when run in production without Mix
   installed.
   """
-  @app :phoenix_sandbox
+  @app :test
 
   def migrate do
     load_app()
