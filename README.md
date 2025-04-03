@@ -1,4 +1,4 @@
-# Test
+# PhoenixSandbox
 
 To start your Phoenix server:
 

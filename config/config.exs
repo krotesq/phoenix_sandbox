@@ -7,20 +7,20 @@
 # General application configuration
 import Config
 
-config :test,
-  ecto_repos: [Test.Repo],
+config :phoenix_sandbox,
+  ecto_repos: [PhoenixSandbox.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :test, TestWeb.Endpoint,
+config :phoenix_sandbox, PhoenixSandboxWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: TestWeb.ErrorHTML, json: TestWeb.ErrorJSON],
+    formats: [html: PhoenixSandboxWeb.ErrorHTML, json: PhoenixSandboxWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Test.PubSub,
-  live_view: [signing_salt: "3eIypsZf"]
+  pubsub_server: PhoenixSandbox.PubSub,
+  live_view: [signing_salt: "z7Tf4rfl"]
 
 # Configures the mailer
 #
@@ -29,12 +29,12 @@ config :test, TestWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :test, Test.Mailer, adapter: Swoosh.Adapters.Local
+config :phoenix_sandbox, PhoenixSandbox.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  test: [
+  phoenix_sandbox: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  test: [
+  phoenix_sandbox: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

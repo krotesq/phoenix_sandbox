@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :test, Test.Repo,
+config :phoenix_sandbox, PhoenixSandbox.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
@@ -16,17 +16,17 @@ config :test, Test.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :test, TestWeb.Endpoint,
+config :phoenix_sandbox, PhoenixSandboxWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
-  debug_errors: true,
-  secret_key_base: "qmbbpA8VkOzjVDjlYJWkamM9N+Dobh7OHxkjVXKPu/gMn5MOEH7U3BcddNFsTVnb",
+  debug_errors: true,  
+  secret_key_base: "/isarnf+FgBQBG5Mhmq6UcrmmWPZdx8L8PSjMQ0BhsZFBdKPV3rdQMPQXsxv6lDg",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:test, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:test, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:phoenix_sandbox, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:phoenix_sandbox, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,17 +53,17 @@ config :test, TestWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :test, TestWeb.Endpoint,
+config :phoenix_sandbox, PhoenixSandboxWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/test_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/phoenix_sandbox_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :test, dev_routes: true
+config :phoenix_sandbox, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -1,4 +1,4 @@
-defmodule TestWeb.Telemetry do
+defmodule PhoenixSandboxWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule TestWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("test.repo.query.total_time",
+      summary("phoenix_sandbox.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("test.repo.query.decode_time",
+      summary("phoenix_sandbox.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("test.repo.query.query_time",
+      summary("phoenix_sandbox.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("test.repo.query.queue_time",
+      summary("phoenix_sandbox.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("test.repo.query.idle_time",
+      summary("phoenix_sandbox.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule TestWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {TestWeb, :count_users, []}
+      # {PhoenixSandboxWeb, :count_users, []}
     ]
   end
 end

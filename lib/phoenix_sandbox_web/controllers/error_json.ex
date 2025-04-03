@@ -1,4 +1,4 @@
-defmodule TestWeb.ErrorJSON do
+defmodule PhoenixSandboxWeb.ErrorJSON do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on JSON requests.
 

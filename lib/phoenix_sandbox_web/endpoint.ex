@@ -1,13 +1,13 @@
-defmodule TestWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :test
+defmodule PhoenixSandboxWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :phoenix_sandbox
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_test_key",
-    signing_salt: "udsQ0DJZ",
+    key: "_phoenix_sandbox_key",
+    signing_salt: "gsWycoRt",
     same_site: "Lax"
   ]
 
@@ -21,9 +21,9 @@ defmodule TestWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :test,
+    from: :phoenix_sandbox,
     gzip: false,
-    only: TestWeb.static_paths()
+    only: PhoenixSandboxWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule TestWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :test
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :phoenix_sandbox
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule TestWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug TestWeb.Router
+  plug PhoenixSandboxWeb.Router
 end

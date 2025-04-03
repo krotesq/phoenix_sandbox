@@ -1,4 +1,4 @@
-defmodule TestWeb.CoreComponents do
+defmodule PhoenixSandboxWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -15,7 +15,7 @@ defmodule TestWeb.CoreComponents do
   Icons are provided by [heroicons](https://heroicons.com). See `icon/1` for usage.
   """
   use Phoenix.Component
-  use Gettext, backend: TestWeb.Gettext
+  use Gettext, backend: PhoenixSandboxWeb.Gettext
 
   alias Phoenix.LiveView.JS
 
@@ -661,9 +661,9 @@ defmodule TestWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(TestWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PhoenixSandboxWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(TestWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PhoenixSandboxWeb.Gettext, "errors", msg, opts)
     end
   end
 

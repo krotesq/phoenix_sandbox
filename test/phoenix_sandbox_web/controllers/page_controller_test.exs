@@ -1,5 +1,5 @@
-defmodule TestWeb.PageControllerTest do
-  use TestWeb.ConnCase
+defmodule PhoenixSandboxWeb.PageControllerTest do
+  use PhoenixSandboxWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

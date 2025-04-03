@@ -1,5 +1,5 @@
-defmodule TestWeb.PageController do
-  use TestWeb, :controller
+defmodule PhoenixSandboxWeb.PageController do
+  use PhoenixSandboxWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

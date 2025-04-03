@@ -1,9 +1,9 @@
-defmodule Test.MixProject do
+defmodule PhoenixSandbox.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :test,
+      app: :phoenix_sandbox,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Test.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Test.Application, []},
+      mod: {PhoenixSandbox.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -74,10 +74,10 @@ defmodule Test.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind test", "esbuild test"],
+      "assets.build": ["tailwind phoenix_sandbox", "esbuild phoenix_sandbox"],
       "assets.deploy": [
-        "tailwind test --minify",
-        "esbuild test --minify",
+        "tailwind phoenix_sandbox --minify",
+        "esbuild phoenix_sandbox --minify",
         "phx.digest"
       ]
     ]
